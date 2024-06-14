@@ -8,6 +8,7 @@ import {
   MantineProvider,
 } from "@mantine/core";
 import { BrowserRouter } from "react-router-dom";
+import "./global.css";
 
 const brandColor: MantineColorsTuple = [
   "#e0feff",
