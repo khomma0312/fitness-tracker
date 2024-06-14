@@ -13,3 +13,9 @@
   font-weight: 700;
   color: var(--mantine-color-brand-blue-7);
 }
+
+@media (--sm) {
+  .header {
+    padding: 1rem 2rem;
+  }
+}
