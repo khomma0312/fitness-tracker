@@ -10,5 +10,12 @@ module.exports = {
         "mantine-breakpoint-xl": "88em",
       },
     },
+    "postcss-custom-media-generator": {
+      // you can pass in any arbitrary key, and any valid CSS media query value
+      sm: 600,
+      md: 800,
+      lg: 1000,
+    },
+    "postcss-preset-env": {},
   },
 };
