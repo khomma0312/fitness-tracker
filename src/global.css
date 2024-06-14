@@ -1,3 +1,4 @@
 @custom-media --sm (width <= 48em);
-@custom-media --md (width <= 62em);
-@custom-media --lg (width <= 75em);
+@custom-media --md (48em < width <= 62em);
+@custom-media --lg (62em < width <= 75em);
+@custom-media --xl (75em < width);
