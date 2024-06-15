@@ -2,3 +2,10 @@
 @custom-media --md (48em < width <= 62em);
 @custom-media --lg (62em < width <= 75em);
 @custom-media --xl (75em < width);
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 6fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
