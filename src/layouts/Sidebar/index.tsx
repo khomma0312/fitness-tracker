@@ -4,37 +4,28 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { HiOutlineViewList } from "react-icons/hi";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import styles from "./styles.module.css";
-import { paths } from "@/services/utils/paths";
+import { menuItems } from "@/services/utils/menuItems";
 
 const sidebarItems = [
-  {
-    icon: <HiOutlineHome size={22} />,
-    title: "ホーム",
-    linkTo: paths.dashboard,
-  },
-  {
-    icon: <HiOutlineSearch size={22} />,
-    title: "トレーニングを探す",
-    linkTo: paths.workouts,
-  },
-  {
-    icon: <HiOutlineViewList size={22} />,
-    title: "トレーニング履歴",
-    linkTo: paths.history,
-  },
-  {
-    icon: <HiOutlineUserCircle size={22} />,
-    title: "マイページ",
-    linkTo: paths.mypage,
-  },
+  { ...menuItems.dashboard, icon: <HiOutlineHome size={22} /> },
+  { ...menuItems.workouts, icon: <HiOutlineSearch size={22} /> },
+  { ...menuItems.history, icon: <HiOutlineViewList size={22} /> },
+  { ...menuItems.mypage, icon: <HiOutlineUserCircle size={22} /> },
 ];
 
 export const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
-      {sidebarItems.map((item) => (
-        <SideBarItem icon={item.icon} title={item.title} linkTo={item.linkTo} />
-      ))}
+      <ul>
+        {sidebarItems.map((item) => (
+          <SideBarItem
+            key={item.linkTo}
+            icon={item.icon}
+            title={item.title}
+            linkTo={item.linkTo}
+          />
+        ))}
+      </ul>
     </aside>
   );
 };
