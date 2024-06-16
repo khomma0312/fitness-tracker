@@ -5,7 +5,6 @@
   margin: 0 auto;
   text-decoration: none;
   color: #475569;
-  font-weight: 700;
   border-radius: 10px;
 }
 
@@ -13,7 +12,7 @@
   background-color: #f3f4f6;
 }
 
-/* TODO: うまくいっていないので直す */
 .item:global(.active) {
   background-color: #f3f4f6;
+  font-weight: 700;
 }
