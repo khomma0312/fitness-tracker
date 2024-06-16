@@ -1,7 +1,9 @@
 .header {
+  grid-column: 1 / -1;
   padding: 1rem 4rem;
   background-color: #ffffff;
-  box-shadow: 0 0 2px #e0e0e0;
+  border: 1px solid #e5e7eb;
+  border-width: 0 0 1px;
 }
 
 .header * {
@@ -14,7 +16,7 @@
   color: var(--mantine-color-brand-blue-7);
 }
 
-@media (--sm) {
+@media (--md-to-sm) {
   .header {
     padding: 1rem 2rem;
   }

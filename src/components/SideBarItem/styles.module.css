@@ -1,0 +1,18 @@
+.item {
+  border-radius: 10px;
+  color: #475569;
+  display: block;
+  font-size: 0.9rem;
+  margin: 13px auto;
+  padding: 13px 20px;
+  width: 90%;
+}
+
+.item:hover {
+  background-color: #f3f4f6;
+}
+
+.item:global(.active) {
+  background-color: #f3f4f6;
+  font-weight: 700;
+}

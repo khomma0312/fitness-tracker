@@ -10,6 +10,7 @@ import { EditCustomWorkouts } from "@/pages/EditCustomWorkouts";
 import { ChangePassword } from "@/pages/ChangePassword";
 import { History } from "@/pages/History";
 import { Layout } from "@/Layout";
+import { paths } from "./services/utils/paths";
 
 function App() {
   return (
@@ -17,21 +18,20 @@ function App() {
       {/* TODO: ログインしていない時はリダイレクトするようProtectedRouteで囲う */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Navigate replace to="/dashboard" />} />
-        <Route path="/dashboard" element={<Home />} />
-        <Route path="/workouts" element={<Workouts />} />
-        <Route path="/workout/:id" element={<Workout />} />
-        <Route path="/mypage" element={<Mypage />} />
-        <Route path="/custom-workouts" element={<CustomWorkouts />} />
-        <Route path="/custom-workouts" element={<CustomWorkouts />} />
+        <Route path={paths.dashboard} element={<Home />} />
+        <Route path={paths.workouts} element={<Workouts />} />
+        <Route path={paths.workout} element={<Workout />} />
+        <Route path={paths.mypage} element={<Mypage />} />
+        <Route path={paths.customWorkouts} element={<CustomWorkouts />} />
         <Route
-          path="/edit/custom-workouts/:id"
+          path={paths.editCustomWorkouts}
           element={<EditCustomWorkouts />}
         />
-        <Route path="/history" element={<History />} />
+        <Route path={paths.history} element={<History />} />
       </Route>
-      <Route path="/signin" element={<Signin />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/change-password" element={<ChangePassword />} />
+      <Route path={paths.signin} element={<Signin />} />
+      <Route path={paths.signup} element={<Signup />} />
+      <Route path={paths.changePassword} element={<ChangePassword />} />
     </Routes>
   );
 }
