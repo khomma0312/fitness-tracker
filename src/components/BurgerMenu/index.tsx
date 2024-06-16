@@ -3,6 +3,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { menuItems } from "@/services/utils/menuItems";
 import { HiOutlineHome } from "react-icons/hi";
 import { HiOutlineSearch } from "react-icons/hi";
+import { HiOutlineDocumentPlus } from "react-icons/hi2";
 import { HiOutlineViewList } from "react-icons/hi";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { SideBarItem } from "../SideBarItem";
@@ -11,6 +12,7 @@ import styles from "./styles.module.css";
 const drawerItems = [
   { ...menuItems.dashboard, icon: <HiOutlineHome size={22} /> },
   { ...menuItems.workouts, icon: <HiOutlineSearch size={22} /> },
+  { ...menuItems.addWorkouts, icon: <HiOutlineDocumentPlus size={22} /> },
   { ...menuItems.history, icon: <HiOutlineViewList size={22} /> },
   { ...menuItems.mypage, icon: <HiOutlineUserCircle size={22} /> },
 ];

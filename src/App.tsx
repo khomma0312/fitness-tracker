@@ -9,6 +9,7 @@ import { CustomWorkouts } from "@/pages/CustomWorkouts";
 import { EditCustomWorkouts } from "@/pages/EditCustomWorkouts";
 import { ChangePassword } from "@/pages/ChangePassword";
 import { History } from "@/pages/History";
+import { AddWorkout } from "@/pages/AddWorkout";
 import { Layout } from "@/Layout";
 import { paths } from "./services/utils/paths";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path={paths.dashboard} element={<Home />} />
         <Route path={paths.workouts} element={<Workouts />} />
         <Route path={paths.workout} element={<Workout />} />
+        <Route path={paths.addWorkout} element={<AddWorkout />} />
         <Route path={paths.mypage} element={<Mypage />} />
         <Route path={paths.customWorkouts} element={<CustomWorkouts />} />
         <Route
