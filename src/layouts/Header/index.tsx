@@ -8,10 +8,10 @@ export const Header = () => {
   return (
     <Flex className={styles.header} justify={"space-between"} align={"center"}>
       <h1 className={styles.logo}>Fitness Pal</h1>
-      <WhenVisible sm>
+      <WhenVisible sm md>
         <BurgerMenu />
       </WhenVisible>
-      <WhenVisible md lg xl>
+      <WhenVisible lg xl>
         <IconMenu />
       </WhenVisible>
     </Flex>
