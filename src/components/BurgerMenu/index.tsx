@@ -31,8 +31,10 @@ export const BurgerMenu = () => {
               linkTo={item.linkTo}
             />
           ))}
-          <li className={styles.logout}>
-            <UnstyledButton>ログアウト</UnstyledButton>
+          <li>
+            <UnstyledButton className={styles.logout}>
+              ログアウト
+            </UnstyledButton>
           </li>
         </ul>
       </Drawer>
