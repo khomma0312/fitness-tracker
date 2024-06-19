@@ -1,0 +1,12 @@
+.dashboard {
+  background-color: #f8fafc;
+  padding-top: 40px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
