@@ -9,6 +9,7 @@ import {
 } from "@mantine/core";
 import { BrowserRouter } from "react-router-dom";
 import "./global.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const brandColor: MantineColorsTuple = [
   "#e0feff",
@@ -31,12 +32,16 @@ const theme = createTheme({
   fontFamily: "sans-serif",
 });
 
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <MantineProvider theme={theme}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </QueryClientProvider>
     </MantineProvider>
   </React.StrictMode>,
 );
