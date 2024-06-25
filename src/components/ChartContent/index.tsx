@@ -10,6 +10,7 @@ import {
   LineElement,
 } from "chart.js";
 import { Chart } from "react-chartjs-2";
+import styles from "./styles.module.css";
 
 ChartJS.register(
   CategoryScale,
@@ -46,8 +47,13 @@ export const ChartContent = ({
   };
 
   return (
-    <div>
-      <Chart type="line" data={data} />
+    <div className={styles.container}>
+      <Chart
+        width={500}
+        options={{ maintainAspectRatio: false }}
+        type="line"
+        data={data}
+      />
     </div>
   );
 };
