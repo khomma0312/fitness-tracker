@@ -11,6 +11,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./global.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { worker } from "./mock/api/browser.ts";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const brandColor: MantineColorsTuple = [
   "#e0feff",
@@ -41,12 +42,13 @@ if (process.env.NODE_ENV === "development") {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <MantineProvider theme={theme}>
-      <QueryClientProvider client={client}>
+    <QueryClientProvider client={client}>
+      <MantineProvider theme={theme}>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </QueryClientProvider>
-    </MantineProvider>
+      </MantineProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   </React.StrictMode>,
 );
