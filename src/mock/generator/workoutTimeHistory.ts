@@ -1,7 +1,4 @@
-interface WorkoutTime {
-  month: string;
-  time: number;
-}
+import { WorkoutTime } from "@/services/api/getWorkoutTimeHistory";
 
 const workoutTimeHistory: WorkoutTime[] = [
   {

@@ -37,7 +37,9 @@ const theme = createTheme({
 const client = new QueryClient();
 
 if (process.env.NODE_ENV === "development") {
-  await worker.start();
+  await worker.start({
+    onUnhandledRequest: "bypass",
+  });
 }
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
