@@ -2,6 +2,9 @@ import { Outlet } from "react-router-dom";
 import { Header } from "@/layouts/Header";
 import { Sidebar } from "./layouts/Sidebar";
 import { WhenVisible } from "./components/WhenVisible";
+import { HandleServerError } from "./components/HandleServerError";
+import { Suspense } from "react";
+import { Loader } from "./components/Loader";
 
 export const Layout = () => {
   return (
@@ -10,7 +13,11 @@ export const Layout = () => {
       <WhenVisible lg xl>
         <Sidebar />
       </WhenVisible>
-      <Outlet />
+      <HandleServerError>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </HandleServerError>
     </div>
   );
 };
