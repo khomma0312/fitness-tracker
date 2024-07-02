@@ -9,7 +9,8 @@ interface SummedWorkouts {
 }
 
 export const TodaysTrainingTable = () => {
-  // TODO: 日時はJotaiなどの状態管理ライブラリを使って取得する？
+  // TODO: ユーザーIDはuseAuth的なフックから取得する？
+  // TODO: 日付はここで生成する？どこかのglobal stateから取得する？
   const { workouts } = useWorkoutsByDay(1, "2021-09-01");
 
   // 同じworkoutNameは重複を削除し、minuteとcaloriesConsumedを合計する
