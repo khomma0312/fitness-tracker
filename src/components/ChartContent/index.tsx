@@ -49,7 +49,8 @@ export const ChartContent = ({
   return (
     <div className={styles.container}>
       <Chart
-        width={500}
+        width={425}
+        height={190}
         options={{ maintainAspectRatio: false }}
         type="line"
         data={data}
