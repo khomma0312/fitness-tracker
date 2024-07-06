@@ -1,28 +1,28 @@
-import { WorkoutTime } from "@/services/api/getWorkoutTimeHistory";
+import { WorkoutTime } from '@/services/api/getWorkoutTimeHistory';
 
 const workoutTimeHistory: WorkoutTime[] = [
   {
-    month: "2024-01",
+    month: '2024-01',
     time: 100,
   },
   {
-    month: "2024-02",
+    month: '2024-02',
     time: 65,
   },
   {
-    month: "2024-03",
+    month: '2024-03',
     time: 64,
   },
   {
-    month: "2024-04",
+    month: '2024-04',
     time: 63,
   },
   {
-    month: "2024-05",
+    month: '2024-05',
     time: 67,
   },
   {
-    month: "2024-06",
+    month: '2024-06',
     time: 65,
   },
 ];

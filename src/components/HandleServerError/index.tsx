@@ -1,5 +1,5 @@
-import { ErrorBoundary } from "react-error-boundary";
-import { ErrorMessage } from "../ErrorMessage";
+import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorMessage } from '../ErrorMessage';
 
 interface HandleServerErrorProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export const ErrorFallback = () => {
 };
 
 const onError = (error: Error) => {
-  console.log("error.message", error.message);
+  console.log('error.message', error.message);
 };
 
 export const HandleServerError = ({ children }: HandleServerErrorProps) => {
