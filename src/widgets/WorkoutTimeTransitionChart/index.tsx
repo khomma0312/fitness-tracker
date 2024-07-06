@@ -1,27 +1,23 @@
 import { Card } from "@/components/Card";
 import { ChartContent } from "@/components/ChartContent";
 import { useWorkoutTimeHistory } from "@/hooks/api/useWorkoutTimeHistory";
+import { useEndDateStrValue, useStartDateStrValue } from "@/store/dashboard-date";
 
-interface WorkoutTimeTransitionChartProps {
-  startYearMonth: string;
-  endYearMonth: string;
-}
-
-export const WorkoutTimeTransitionChart = ({
-  startYearMonth,
-  endYearMonth,
-}: WorkoutTimeTransitionChartProps) => {
+export const WorkoutTimeTransitionChart = () => {
   // TODO: ユーザーIDはuseAuth的なフックから取得する？
   const userId = 1;
 
+  const startDateStr = useStartDateStrValue();
+  const endDateStr = useEndDateStrValue();
+
   const { workoutTimes } = useWorkoutTimeHistory(
     userId,
-    startYearMonth,
-    endYearMonth,
+    startDateStr,
+    endDateStr,
   );
 
-  const axisLabels = workoutTimes?.map((item) => item.month) ?? [];
-  const chartData = workoutTimes?.map((item) => item.time) ?? [];
+  const axisLabels = workoutTimes ? workoutTimes.map((item) => item.month) : [];
+  const chartData = workoutTimes ? workoutTimes.map((item) => item.time) : [];
 
   return (
     <Card>
