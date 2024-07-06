@@ -2,10 +2,16 @@ import { WorkoutTimeTransitionChart } from "@/widgets/WorkoutTimeTransitionChart
 import styles from "./styles.module.css";
 import { TodaysTrainingTable } from "@/widgets/TodaysTrainingTable";
 import { Title } from "@mantine/core";
-import { useTitleDateStrValue } from "@/store/dashboard-date";
+import { useTitleDateValue } from "@/store/dashboard-date";
 
 export const Home = () => {
-  const titleDate = useTitleDateStrValue();
+  const date = useTitleDateValue();
+  const titleDate = date.toLocaleDateString('ja-JP', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'short',
+  });
 
   return (
     <main className={styles.dashboard}>

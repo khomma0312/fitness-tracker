@@ -3,18 +3,6 @@ import { atom, useAtomValue } from 'jotai';
 const initDate = new Date();
 const dateAtom = atom(initDate);
 
-// ダッシュボードのタイトルに表示される日付を取得
-const titleDateStrAtom = atom((get) => {
-  const date = get(dateAtom);
-
-  return date.toLocaleDateString('ja-JP', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    weekday: 'short',
-  });
-});
-
 // タイトルの日付の6ヶ月前の年月を取得
 const startDateStrAtom = atom((get) => {
   const date = get(dateAtom);
@@ -33,6 +21,6 @@ const endDateStrAtom = atom((get) => {
   return `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}`;
 });
 
-export const useTitleDateStrValue = () => useAtomValue(titleDateStrAtom);
+export const useTitleDateValue = () => useAtomValue(dateAtom);
 export const useStartDateStrValue = () => useAtomValue(startDateStrAtom);
 export const useEndDateStrValue = () => useAtomValue(endDateStrAtom);
