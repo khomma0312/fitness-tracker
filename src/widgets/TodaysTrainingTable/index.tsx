@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 import { RecordedWorkout } from "@/services/api/getWorkoutsByDay";
 import { useTitleDateValue } from "@/store/dashboard-date";
 
-interface SummedWorkouts {
+interface GroupedWorkouts {
   [workoutName: string]: RecordedWorkout;
 }
 
@@ -26,19 +26,19 @@ export const TodaysTrainingTable = () => {
   return (
     <Card>
       <h3 className={styles.title}>今日やったトレーニング🏃‍♂️</h3>
-      {groupedWorkouts ? <TableContent summedWorkouts={groupedWorkouts} /> : <p>トレーニングがありません</p>}
+      {groupedWorkouts ? <TableContent groupedWorkouts={groupedWorkouts} /> : <p>トレーニングがありません</p>}
     </Card>
   );
 };
 
-const TableContent = ({summedWorkouts }: { summedWorkouts: SummedWorkouts }) => {
+const TableContent = ({ groupedWorkouts }: { groupedWorkouts: GroupedWorkouts }) => {
   const headers: string[] = ["種目", "時間", "消費カロリー"];
 
   const headerRows = headers.map((header) => (
     <Table.Th key={header}>{header}</Table.Th>
   ));
 
-  const bodyRows = Object.entries(summedWorkouts).map(([workoutName, workout]) => (
+  const bodyRows = Object.entries(groupedWorkouts).map(([workoutName, workout]) => (
     <Table.Tr key={workoutName}>
       <Table.Td>{workoutName}</Table.Td>
       <Table.Td>{workout.minute}</Table.Td>
@@ -65,5 +65,5 @@ const groupWorkouts = (workouts: RecordedWorkout[]) => {
       acc[cur.workoutName] = { ...cur };
     }
     return acc;
-  }, {} as SummedWorkouts);
+  }, {} as GroupedWorkouts);
 };
