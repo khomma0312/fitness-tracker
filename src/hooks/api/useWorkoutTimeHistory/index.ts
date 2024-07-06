@@ -19,5 +19,5 @@ export const useWorkoutTimeHistory = (
     if (error) showBoundary(error);
   }, [error, showBoundary]);
 
-  return { workoutTimes: data, isLoading, error };
+  return { workoutTimes: data, isLoading };
 };
