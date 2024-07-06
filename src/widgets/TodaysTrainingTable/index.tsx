@@ -14,12 +14,12 @@ export const TodaysTrainingTable = () => {
   const { workouts } = useWorkoutsByDay(1, "2021-09-01");
 
   // 同じworkoutNameは重複を削除し、minuteとcaloriesConsumedを合計する
-  const summedWorkouts = Array.isArray(workouts) && workouts.length ? sumWorkouts(workouts) : null;
+  const groupedWorkouts = Array.isArray(workouts) && workouts.length ? groupWorkouts(workouts) : null;
 
   return (
     <Card>
       <h3 className={styles.title}>今日やったトレーニング🏃‍♂️</h3>
-      {summedWorkouts ? <TableContent summedWorkouts={summedWorkouts} /> : <p>トレーニングがありません</p>}
+      {groupedWorkouts ? <TableContent summedWorkouts={groupedWorkouts} /> : <p>トレーニングがありません</p>}
     </Card>
   );
 };
@@ -49,7 +49,7 @@ const TableContent = ({summedWorkouts }: { summedWorkouts: SummedWorkouts }) => 
   );
 };
 
-const sumWorkouts = (workouts: RecordedWorkout[]) => {
+const groupWorkouts = (workouts: RecordedWorkout[]) => {
   return workouts?.reduce((acc, cur) => {
     if (acc[cur.workoutName]) {
       acc[cur.workoutName].minute += cur.minute;
