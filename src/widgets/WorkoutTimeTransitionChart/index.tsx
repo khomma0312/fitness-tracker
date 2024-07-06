@@ -1,7 +1,10 @@
-import { Card } from "@/components/Card";
-import { ChartContent } from "@/components/ChartContent";
-import { useWorkoutTimeHistory } from "@/hooks/api/useWorkoutTimeHistory";
-import { useEndDateStrValue, useStartDateStrValue } from "@/store/dashboard-date";
+import { Card } from '@/components/Card';
+import { ChartContent } from '@/components/ChartContent';
+import { useWorkoutTimeHistory } from '@/hooks/api/useWorkoutTimeHistory';
+import {
+  useEndDateStrValue,
+  useStartDateStrValue,
+} from '@/store/dashboard-date';
 
 export const WorkoutTimeTransitionChart = () => {
   // TODO: ユーザーIDはuseAuth的なフックから取得する？

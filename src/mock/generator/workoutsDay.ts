@@ -1,23 +1,23 @@
-import { RecordedWorkout } from "@/services/api/getWorkoutsByDay";
+import { RecordedWorkout } from '@/services/api/getWorkoutsByDay';
 
 const workoutsDay: RecordedWorkout[] = [
   {
-    workoutName: "ベンチプレス",
+    workoutName: 'ベンチプレス',
     minute: 30,
     caloriesConsumed: 100,
   },
   {
-    workoutName: "スクワット",
+    workoutName: 'スクワット',
     minute: 15,
     caloriesConsumed: 50,
   },
   {
-    workoutName: "デッドリフト",
+    workoutName: 'デッドリフト',
     minute: 20,
     caloriesConsumed: 70,
   },
   {
-    workoutName: "スクワット",
+    workoutName: 'スクワット',
     minute: 45,
     caloriesConsumed: 150,
   },

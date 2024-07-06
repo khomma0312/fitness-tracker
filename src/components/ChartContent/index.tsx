@@ -8,9 +8,9 @@ import {
   LinearScale,
   PointElement,
   LineElement,
-} from "chart.js";
-import { Chart } from "react-chartjs-2";
-import styles from "./styles.module.css";
+} from 'chart.js';
+import { Chart } from 'react-chartjs-2';
+import styles from './styles.module.css';
 
 ChartJS.register(
   CategoryScale,
@@ -40,7 +40,7 @@ export const ChartContent = ({
         label: title,
         data: chartData,
         fill: false,
-        borderColor: "#20d6f7",
+        borderColor: '#20d6f7',
         tension: 0.3,
       },
     ],

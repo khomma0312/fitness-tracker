@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export interface WorkoutTime {
   month: string;
@@ -11,7 +11,7 @@ export const getWorkoutTimeHistory = async (
   endYearMonth: string,
 ) => {
   const res = await axios.get<WorkoutTime[] | undefined>(
-    "/user/workout-time-history",
+    '/user/workout-time-history',
     {
       params: {
         userId,
