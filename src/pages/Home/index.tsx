@@ -1,15 +1,19 @@
 import { WorkoutTimeTransitionChart } from "@/widgets/WorkoutTimeTransitionChart";
 import styles from "./styles.module.css";
 import { TodaysTrainingTable } from "@/widgets/TodaysTrainingTable";
+import { Title } from "@mantine/core";
+import { useTitleDateStrValue } from "@/store/dashboard-date";
 
 export const Home = () => {
-  // TODO: Jotaiなどの状態管理ライブラリを使ってstoreからstartYearMonth, endYearMonth, dateを取得する
+  const titleDate = useTitleDateStrValue();
+
   return (
-    <div className={styles.dashboard}>
+    <main className={styles.dashboard}>
+      <Title order={2} className={styles.title}>{titleDate}</Title>
       <div className={styles.container}>
-        <WorkoutTimeTransitionChart startYearMonth="2021-03" endYearMonth="2021-08" />
+        <WorkoutTimeTransitionChart />
         <TodaysTrainingTable />
       </div>
-    </div>
+    </main>
   );
 };

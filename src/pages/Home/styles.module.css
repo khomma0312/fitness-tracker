@@ -3,6 +3,14 @@
   padding-top: 40px;
 }
 
+.title {
+  color: var(--mantine-color-brand-blue-8);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
