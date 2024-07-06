@@ -3,6 +3,7 @@ import { useWorkoutsByDay } from "@/hooks/api/useWorkoutsByDay";
 import { Table } from "@mantine/core";
 import styles from "./styles.module.css";
 import { RecordedWorkout } from "@/services/api/getWorkoutsByDay";
+import { useTitleDateValue } from "@/store/dashboard-date";
 
 interface SummedWorkouts {
   [workoutName: string]: RecordedWorkout;
@@ -10,8 +11,14 @@ interface SummedWorkouts {
 
 export const TodaysTrainingTable = () => {
   // TODO: ユーザーIDはuseAuth的なフックから取得する？
-  // TODO: 日付はここで生成する？どこかのglobal stateから取得する？
-  const { workouts } = useWorkoutsByDay(1, "2021-09-01");
+  const userId = 1;
+  const titleDate = useTitleDateValue();
+  // YYYY-mm-dd形式に変換
+  const dateStr = `${titleDate.getFullYear()}-${String(titleDate.getMonth() + 1)
+    .padStart(2, "0")}-${String(titleDate.getDate())
+    .padStart(2, "0")}`;
+
+  const { workouts } = useWorkoutsByDay(userId, dateStr);
 
   // 同じworkoutNameは重複を削除し、minuteとcaloriesConsumedを合計する
   const groupedWorkouts = Array.isArray(workouts) && workouts.length ? groupWorkouts(workouts) : null;
