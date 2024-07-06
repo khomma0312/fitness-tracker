@@ -1,0 +1,17 @@
+.container {
+  padding-top: 30px;
+}
+
+.message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 7px;
+  border-radius: 5px;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+
+  @media (--md-to-sm) {
+    width: 90%;
+  }
+}
