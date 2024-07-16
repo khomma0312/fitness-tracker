@@ -12,7 +12,7 @@
     "supabase-status": "npx supabase status"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.4.2",
+    "@hookform/resolvers": "^3.9.0",
     "@mantine/core": "^7.10.1",
     "@mantine/hooks": "^7.10.1",
     "@supabase/supabase-js": "^2.44.3",

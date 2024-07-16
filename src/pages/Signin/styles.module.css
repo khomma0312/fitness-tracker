@@ -1,0 +1,16 @@
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 48rem;
+  place-content: center;
+
+  @media (--md-to-sm) {
+    grid-template-columns: 0.8fr;
+  }
+}
+
+.logo {
+  color: var(--mantine-color-brand-blue-7);
+  margin-bottom: 2.4rem;
+  text-align: center;
+}
