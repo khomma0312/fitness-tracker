@@ -1,0 +1,15 @@
+.card {
+  border: 1px solid #cecfd0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.title {
+  color: var(--mantine-color-brand-blue-7);
+  font-size: 1.5rem;
+  text-align: center;
+}
