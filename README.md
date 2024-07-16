@@ -38,3 +38,14 @@ supabaseクライアントに設定するsupabaseUrl: http://localhost:54321
 ```
 npx supabase status
 ```
+
+## APIを追加する場合
+ローカルに関数を新規作成する。
+```
+npx supabase functions new <関数名>
+```
+
+関数をデプロイする。
+```
+npx supabase functions deploy <関数名>
+```
